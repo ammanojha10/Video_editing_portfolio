@@ -454,12 +454,28 @@ footer { display: flex; justify-content: space-between; align-items: center; pad
         Based in <strong>Guwahati, Assam</strong>. Open for freelance, collaboration, and full-time roles that demand both sides of the brain.
       </p>
       <div class="recent-work-wrap">
-        <span class="recent-work-label">Main Showcase Reel</span>
-        <div class="recent-work-box highlight" onclick="openDetail(5)" style="margin-bottom:1.5rem;">
-          <svg viewBox="0 0 80 80" fill="none"><rect x="8" y="18" width="64" height="44" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M32 32l20 8-20 8V32z" stroke="currentColor" stroke-width="1.2"/></svg>
-          <div class="recent-info">
-            <span class="recent-title">MAIN SHOWCASE REEL</span>
-            <span class="recent-code">SV-01</span>
+        <span class="recent-work-label">Showcase Reels</span>
+        <div style="display:flex;flex-direction:column;gap:0.8rem;margin-bottom:1.5rem;">
+          <div class="recent-work-box highlight" onclick="openDetail(5)">
+            <svg viewBox="0 0 80 80" fill="none"><rect x="8" y="18" width="64" height="44" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M32 32l20 8-20 8V32z" stroke="currentColor" stroke-width="1.2"/></svg>
+            <div class="recent-info">
+              <span class="recent-title">MAIN SHOWCASE REEL</span>
+              <span class="recent-code">SV-01</span>
+            </div>
+          </div>
+          <div class="recent-work-box highlight" onclick="openDetail(11)">
+            <svg viewBox="0 0 80 80" fill="none"><rect x="8" y="18" width="64" height="44" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M32 32l20 8-20 8V32z" stroke="currentColor" stroke-width="1.2"/></svg>
+            <div class="recent-info">
+              <span class="recent-title">FUN PROJECT REEL</span>
+              <span class="recent-code">SV-07</span>
+            </div>
+          </div>
+          <div class="recent-work-box highlight" onclick="openDetail(2)">
+            <svg viewBox="0 0 80 80" fill="none"><rect x="8" y="18" width="64" height="44" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M32 32l20 8-20 8V32z" stroke="currentColor" stroke-width="1.2"/></svg>
+            <div class="recent-info">
+              <span class="recent-title">FUN PROJECT 03</span>
+              <span class="recent-code">FP03</span>
+            </div>
           </div>
         </div>
         <span class="recent-work-label">Recent Collaborations</span>
@@ -554,7 +570,6 @@ footer { display: flex; justify-content: space-between; align-items: center; pad
         <span class="detail-tag" id="d-tag"></span>
         <div class="detail-title" id="d-title"></div>
         <div class="detail-dots" id="d-dots"></div>
-        <p class="detail-desc" id="d-desc"></p>
       </div>
       <div class="detail-actions">
         <button class="detail-close" onclick="showView('home')">← Back to Work</button>
@@ -666,7 +681,7 @@ const items = [
   { code:'SV-04', tag:'Commissioned Work', title:'LATEST\nCOMMISSION', desc:'Recent Instagram Commission\nCinematic Reel Format', instaID:'DclQr3YBB6v', icon:videoIcon },
   { code:'SV-05', tag:'Instagram Collaboration', title:'INSTAGRAM\nCOLLABORATION', desc:'Recent social media work\nCinematic Reel Format', instaID:'DbuZuX2xkf9', icon:videoIcon },
   { code:'SV-06', tag:'Instagram Collaboration', title:'INSTAGRAM\nCOLLABORATION', desc:'Recent social media work\nCinematic Reel Format', instaID:'DbOBuxpzRAB', icon:videoIcon },
-  { code:'SV-07', tag:'Short Format', title:'VERTICAL\nSHORT', desc:'Google Drive Short Format', driveID:'1YBh0mCI3SBCTRGADlpVd34mjWmWav0h6', isVertical:true, icon:videoIcon }
+  { code:'SV-07', tag:'Fun Project Reel', title:'FUN PROJECT\nREEL', desc:'', driveID:'1YBh0mCI3SBCTRGADlpVd34mjWmWav0h6', icon:videoIcon }
 ];
 
 let filtered = [...items];
@@ -719,7 +734,6 @@ function updateDetail() {
   document.getElementById('d-num').textContent = String(currentIdx + 1).padStart(2,'0');
   document.getElementById('d-tag').textContent = item.tag;
   document.getElementById('d-title').innerHTML = item.title.replace(/\n/g,'<br>');
-  document.getElementById('d-desc').innerHTML = item.desc.replace('\n','<br>');
 
   // Live dots — one per item, clickable
   const dotsEl = document.getElementById('d-dots');
